@@ -1,0 +1,29 @@
+{
+  "name": "supabase-app-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "./public/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Landon McKell",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.63",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.18",
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.35",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  }
+}
