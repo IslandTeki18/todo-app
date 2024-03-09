@@ -5,14 +5,14 @@ export const mainRoutes = [
   {
     index: true,
     path: "/",
-    component: <ListTodosView />,
+    element: <ListTodosView />,
   },
   {
     path: "/about",
-    component: "About",
+    element: "About",
   },
   {
     path: "/contact",
-    component: "Contact",
+    element: "Contact",
   },
 ];
