@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Calendar', href: '#', current: false },
 ]
 
-export default function Example() {
+export const Header = () => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
