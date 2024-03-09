@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ListTodosView } from "~src/features";
+import { SignInView, SignUpView } from "~src/features/Auth";
 
 export const mainRoutes = [
   {
@@ -9,11 +10,11 @@ export const mainRoutes = [
   },
   {
     path: "/sign-in",
-    element: <div>Sign In</div>,
+    element: <SignInView />,
   },
   {
     path: "/sign-up",
-    element: <div>Sign Up</div>,
+    element: <SignUpView />,
   }
   
 ];

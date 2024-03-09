@@ -9,3 +9,11 @@ export type Task = {
   recurrence_interval?: string;
   user_id: number;
 };
+
+export type User = {
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+  two_factor_auth_enabled?: boolean;
+};
