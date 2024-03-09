@@ -23,7 +23,7 @@ export const SignInForm = (props: SignInFormProps) => {
     try {
       const { data } = await signIn(signInObj.email, signInObj.password);
       if (data.user) {
-        setAuthState({ isAuthenticated: true, user: data.user });
+        setAuthState({ isAuthenticated: true});
         navigate("/");
       }
     } catch (error) {
