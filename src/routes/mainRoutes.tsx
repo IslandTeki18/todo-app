@@ -8,11 +8,12 @@ export const mainRoutes = [
     element: <ListTodosView />,
   },
   {
-    path: "/about",
-    element: "About",
+    path: "/sign-in",
+    element: <div>Sign In</div>,
   },
   {
-    path: "/contact",
-    element: "Contact",
-  },
+    path: "/sign-up",
+    element: <div>Sign Up</div>,
+  }
+  
 ];
