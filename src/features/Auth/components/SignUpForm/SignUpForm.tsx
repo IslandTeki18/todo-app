@@ -19,11 +19,14 @@ export const SignUpForm = (props: SignUpFormProps) => {
   async function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
-      // const { data } = await signUp(signUpObj.email, signUpObj.password);
-      // console.log(data)
-      
-      props.onSubmit();
-    } catch (error) {}
+      const { data } = await signUp(signUpObj.email, signUpObj.password);
+      if (data) {
+        // Make the profile api call here
+        props.onSubmit();
+      }
+    } catch (error) {
+      console.error("Error signing up: ", error);
+    }
   }
 
   function disableButton() {
@@ -53,7 +56,6 @@ export const SignUpForm = (props: SignUpFormProps) => {
               setSignUpObj({ ...signUpObj, email: e.target.value })
             }
           />
-
           <LabelInput
             labelText="Password"
             hasLabel
