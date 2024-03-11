@@ -23,7 +23,7 @@ export const SignInForm = (props: SignInFormProps) => {
     try {
       const { data } = await signIn(signInObj.email, signInObj.password);
       if (data.user) {
-        setAuthState({ isAuthenticated: true});
+        setAuthState({ isAuthenticated: true });
         navigate("/");
       }
     } catch (error) {
@@ -44,45 +44,37 @@ export const SignInForm = (props: SignInFormProps) => {
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form className="space-y-6" onSubmit={onSubmitHandler}>
-          <div>
-            <LabelInput
-              labelText="Email"
-              hasLabel
-              name="email"
-              type="email"
-              placeholder="Email..."
-              value={signInObj.email}
-              onChange={(e) =>
-                setSignInObj({ ...signInObj, email: e.target.value })
-              }
-            />
-          </div>
-
-          <div>
-            <LabelInput
-              labelText="Password"
-              hasLabel
-              name="password"
-              placeholder="Password..."
-              type="password"
-              value={signInObj.password}
-              onChange={(e) =>
-                setSignInObj({ ...signInObj, password: e.target.value })
-              }
-            />
-          </div>
-
-          <div>
-            <Button buttonType="submit" isFullWidth size="medium">
-              Sign in
-            </Button>
-          </div>
+          <LabelInput
+            labelText="Email"
+            hasLabel
+            name="email"
+            type="email"
+            placeholder="Email..."
+            value={signInObj.email}
+            onChange={(e) =>
+              setSignInObj({ ...signInObj, email: e.target.value })
+            }
+          />
+          <LabelInput
+            labelText="Password"
+            hasLabel
+            name="password"
+            placeholder="Password..."
+            type="password"
+            value={signInObj.password}
+            onChange={(e) =>
+              setSignInObj({ ...signInObj, password: e.target.value })
+            }
+          />
+          <Button buttonType="submit" isFullWidth size="medium">
+            Sign in
+          </Button>
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
           Not a member?{" "}
           <a
-            href="#"
+            href="/sign-up"
             className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
           >
             Create an account

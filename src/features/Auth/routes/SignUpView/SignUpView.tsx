@@ -1,9 +1,24 @@
-import * as React from 'react';
+import * as React from "react";
+import { useState } from "react";
+import { SignUpForm } from "../../components";
+import { ConfirmationEmailModal } from "../../components/ConfirmationEmailModal/ConfirmationEmailModal";
 
 export const SignUpView = () => {
-    return (
-        <div>
-            sign up view
-        </div>
-    );
+  const [isConfirmationEmailModalOpen, setIsConfirmationEmailModalOpen] =
+    useState(false);
+  return (
+    <div className="min-h-screen">
+      <SignUpForm
+        onSubmit={() => {
+          setIsConfirmationEmailModalOpen(true);
+        }}
+      />
+      <ConfirmationEmailModal
+        isOpen={isConfirmationEmailModalOpen}
+        onClose={() => {
+          setIsConfirmationEmailModalOpen(false);
+        }}
+      />
+    </div>
+  );
 };
