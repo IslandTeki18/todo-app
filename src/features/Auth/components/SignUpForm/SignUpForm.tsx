@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { LabelInput, Button } from "~src/components";
-import { signUp } from "~src/supabase";
+import { signUp, supabase } from "~src/supabase";
 
 type SignUpFormProps = {
   // Define component props here
@@ -20,8 +20,9 @@ export const SignUpForm = (props: SignUpFormProps) => {
     e.preventDefault();
     try {
       const { data } = await signUp(signUpObj.email, signUpObj.password);
-      if (data) {
+      if (data.user) {
         // Make the profile api call here
+       await supabase.from('profile').insert({supbase_user_id: data.user.id, created_at: new Date(), updated_at: new Date()})
         props.onSubmit();
       }
     } catch (error) {
